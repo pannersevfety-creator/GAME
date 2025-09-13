@@ -1,0 +1,47 @@
+<<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Car Racer — Simple HTML + JavaScript Game</title>
+  <style>
+    :root{--bg:#0b1220;--road:#2b2b2b;--line:#f2f2f2;--car:#ff4d4d}
+    *{box-sizing:border-box;margin:0;padding:0;font-family:Inter, system-ui, sans-serif}
+    body{min-height:100vh;background:linear-gradient(180deg,#071226,#031018);color:#e6eef6;display:flex;align-items:center;justify-content:center;padding:20px}
+    .wrap{width:100%;max-width:980px}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:12px;padding:16px;box-shadow:0 6px 30px rgba(3,10,18,0.6)}
+    .row{display:flex;gap:16px}
+    canvas{width:100%;height:auto;border-radius:10px;background:linear-gradient(180deg,#0b1723,#071221)}
+    .panel{width:260px;padding:12px;background:rgba(255,255,255,0.02);border-radius:8px}
+    button{background:#ffd166;border:none;padding:8px 12px;border-radius:8px;font-weight:600;cursor:pointer}
+    .muted{color:#9aa5b1;font-size:13px}
+    .stat{display:flex;justify-content:space-between;margin:6px 0}
+    @media (max-width:920px){.row{flex-direction:column}.panel{width:100%}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card">
+      <div style="display:flex;gap:14px;align-items:center;margin-bottom:10px">
+        <h2 style="margin:0">Car Racer</h2>
+        <div class="muted">Dodge traffic, score points, survive as long as you can.</div>
+      </div>
+      <div class="row">
+        <div style="flex:1">
+          <canvas id="game" width="800" height="600"></canvas>
+        </div>
+        <div class="panel">
+          <div class="stat"><div>Score</div><div id="score">0</div></div>
+          <div class="stat"><div>Speed</div><div id="speed">1</div></div>
+          <div class="stat"><div>Lives</div><div id="lives">3</div></div>
+          <div style="height:8px"></div>
+          <div class="muted">Controls</div>
+          <p class="muted" style="font-size:13px">Arrow keys or A/D to move. Touch left/right halves on mobile. Press Space to pause.</p>
+          <div style="height:8px"></div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap">
+            <button id="startBtn">Start</button>
+            <button id="pauseBtn">Pause</button>
+            <button id="resetBtn">Reset</button>
+          </div>
+          <div style="height:12px"></div>
+          <div class=
